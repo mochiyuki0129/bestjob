@@ -1,0 +1,466 @@
+body {
+    background-color: #D3E4F5;
+    overflow-x: hidden;
+}
+
+main {
+    width: 100%;
+}
+
+.header_wrapper {
+    background-color: black;
+    width: 100%;
+}
+
+.header_inner {
+    width: 90%;
+    padding: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* index */
+
+.logo {
+    font-family: Arial;
+    font-size: 2rem;
+    color: #50E3C2;
+    margin-left: 5rem;
+    text-decoration: none;
+}
+
+.logo:hover {
+    opacity: 0.8;
+}
+
+.login {
+    font-size: 1rem;
+    color: white;
+    font-size: 1.5rem;
+}
+
+main {
+    width: 100%;
+}
+
+.top_img img {
+    width: 100vw;
+    object-fit: cover;
+    filter: brightness(80%);
+    box-shadow: 0 0 5px 0 rgba(0, 0, 0, 5);
+    height: 32rem;
+}
+
+.main_wrapper {
+    width: 90%;
+    margin-top: 2rem;
+    border-bottom: 1px solid rgb(0, 68, 255);
+    margin-left: 4rem;
+}
+
+.service_group {
+    display: flex;
+    padding: 2rem;
+    justify-content: space-between;
+}
+
+.service_group li {
+    font-size: 2rem;
+    font-size: bold;
+}
+
+.service_group p {
+    font-size: 1.5rem;
+    padding: 1rem;
+    margin-left: 1.5rem;
+    line-height: 1.5;
+}
+
+.service_group img {
+    border-radius: 50px;
+    width: 20rem;
+    object-fit: cover;
+}
+
+.service_bass {
+    margin-top: 2rem;
+}
+
+.login_signup {
+    padding: 2rem 0;
+    width: 100%;
+    text-align: center;
+}
+
+.login_signup a {
+    font-size: 2rem;
+}
+
+.login_signup h1 {
+    font-size: 1.5rem;
+    margin: 1rem 0;
+}
+
+.login_signup button,
+.signup_btn {
+    width: 10rem;
+    height: 3rem;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.login_signup button:active,
+.login_submit input:active {
+    opacity: 0.5;
+}
+
+.contact {
+    width: 100%;
+    text-align: center;
+    padding: 2rem 0;
+    background-color: white;
+}
+
+.contact p {
+    font-size: 1.5rem;
+    line-height: 1.5;
+}
+
+/* login */
+
+.login_wrapper {
+    width: 68%;
+    border: 1px solid black;
+    border-radius: 10px;
+    margin: 2rem 0;
+    background-color: white;
+    text-align: center;
+    margin-left: 17rem;
+    padding-bottom: 5.2rem;
+}
+
+.login_inner {
+    padding: 2rem 0;
+    text-align: center;
+    width: 100%;
+}
+
+.login_title {
+    width: 100%;
+    padding: 2rem 0;
+    border-bottom: 1px solid black;
+}
+
+.login_title h1,
+.login_submit a {
+    font-size: 2rem;
+    padding: 0.75rem;
+}
+
+.login_form,
+.type_form {
+    padding: 2rem;
+}
+
+.login_form input {
+    width: 10rem;
+    border-radius: 5px;
+}
+
+.login_input,
+.signup_table td {
+    padding: 1.08rem;
+    font-size: 1.5rem;
+}
+
+.login {
+    cursor: pointer;
+}
+
+.login_submit input {
+    border-radius: 10px;
+    color: black;
+    margin-bottom: 2rem;
+}
+
+.signup_table {
+    padding: 2rem;
+    font-size: 1.5rem;
+    width: 50%;
+    margin-left: 20%;
+}
+
+.type_select {
+    margin:0.66rem;
+}
+
+.form_group {
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+.form_group label[for="gender"] {
+    margin-right: 15rem;
+}
+
+.form_group select {
+    width: 11rem;
+}
+
+.signup_atention {
+    font-size: 0.6rem;
+    margin: 0 13rem 1rem 0;
+    color: #9B9B9B;
+}
+
+.type_form p {
+    padding: 1.13rem;
+    font-size: 1.5rem;
+}
+
+.alert {
+    color: red;
+}
+
+.confirm_table {
+    width: 100%;
+    margin-left: 15%;
+    padding: 2rem;
+}
+
+.confirm_group th,
+.register_group th {
+    font-size: 1.5rem;
+    padding: 1rem;
+}
+
+input,
+select {
+    border-radius: 5px;
+    resize: none;
+}
+
+.register_group select {
+    width: 11rem;
+}
+
+.register_table {
+    width: 100%;
+    margin-left: 20%;
+    padding: 2rem;
+}
+
+.register_group input[type="file"] {
+    border: 1px solid black;
+    padding: 1rem;
+    background-color: rgba(155, 155, 155, 0.35);
+}
+
+textarea {
+    vertical-align: top;
+    border-radius: 5px;
+    resize: none;
+
+}
+
+.twin_btn input[type="button"] {
+    margin-right: 2rem;
+}
+
+.reset_submit {
+    margin-top:1rem;
+}
+
+.admin_btn input:hover {
+    cursor: pointer;
+}
+
+/* main */
+
+.header_container {
+    width: 90%;
+    padding: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+}
+
+.mypage {
+    color: white;
+    text-decoration: none;
+}
+
+.logout {
+    color: white;
+    margin: 0 1rem 0 3rem;
+}
+
+.header_container a:hover {
+    opacity: 0.8;
+    cursor: pointer;
+}
+
+.pass_reset {
+    padding: 2rem;
+}
+
+.pass_reset p {
+    font-size: 1.5rem;
+    padding: 1.2rem;
+}
+
+.twin_btn {
+    width: 100%;
+    text-align: center;
+}
+
+.twin_btn input {
+    width: 8rem;
+    height: 3rem;
+    border-radius: 10px;
+}
+
+.twin_btn input:hover {
+    cursor: pointer;
+}
+
+.apply_form {
+    text-align: center;
+}
+
+.login_inner h2 {
+    padding: 1.5rem;
+    font-size: 1.5rem;
+}
+
+.apply_form textarea {
+    height: 5rem;
+    width: 30rem;
+    resize: none;
+    margin: 1rem;
+    border-radius: 5px;
+}
+
+/* recruit */
+
+.recruit_container {
+    width: auto;
+    padding: 1rem;
+}
+
+.recruit_inner {
+    font-size: 1.5rem;
+    text-align: left;
+    padding: 2rem;
+    border: 1px solid black;
+    margin-bottom: 2rem;
+}
+
+.recruit_inner p {
+    padding: 1rem 0;
+}
+
+.recruit_company {
+    display: flex;
+    justify-content: space-around;
+}
+
+.recruit_categoly {
+    justify-content: space-around;
+}
+
+
+.recruit_main {
+    text-align: center;
+}
+
+.recruit_main p:last-child {
+    border: 1px solid black;
+    text-align: left;
+
+}
+
+span,
+.exception {
+    color: red;
+    font-size: 1rem;
+}
+
+/* admin */
+
+.admin_container {
+padding:2rem 0;
+width:90%;
+margin:0 auto;
+
+
+}
+
+.admin_main {
+    text-align: center;
+}
+
+.admin_main p:last-child {
+    border: 1px solid #aaa;
+    text-align: left;
+    padding: 1rem;
+
+}
+
+.admin_btn {
+    margin-left:40rem;
+}
+
+.admin_btn input {
+    width:8rem;
+    height:3rem;
+}
+
+.admin_group {
+    width:100%;
+    padding-top:2rem;
+    border:1px solid black;
+    margin:1rem 0;
+
+}
+
+.admin_group p {
+    margin-top:1rem;
+}
+
+.pagination {
+    width: 100%;
+    justify-content: center;
+}
+
+.delete {
+    margin-top:1rem;
+    background-color: red;
+}
+
+/* footer */
+
+.footer_wrapper {
+    background-color: black;
+    color: aliceblue;
+    width: 100%;
+}
+
+.footer_inner {
+    width: 90%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2rem;
+}
+
+.company_announce {
+    margin-right: 25rem;
+}
+
+.copyright {
+    color: aliceblue;
+}
