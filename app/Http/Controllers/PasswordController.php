@@ -53,7 +53,7 @@ class PasswordController extends Controller
     }
 
     // パスワードリセットメール送信完了画面
-    public function sendComplete()
+    public function sendMail()
     {
         // メール送信処理で保存したセッションキーに値がなければアクセスできないようにすることで不正アクセスを防ぐ
         if (session()->pull(self::MAIL_SENDED_SESSION_KEY) !== 'user_reset_password_send_email') {
@@ -84,7 +84,7 @@ class PasswordController extends Controller
     }
 
     // パスワード再設定処理
-    public function update(Request $request)
+    public function updatePassword(Request $request)
     {
         try {
             $userToken = $this->userTokenRepository->getUserTokenfromToken($request->reset_token);
@@ -101,7 +101,7 @@ class PasswordController extends Controller
     }
 
     // パスワード再設定完了画面
-    public function edited()
+    public function passwordComplete()
     {
         // パスワード更新処理で保存したセッションキーに値がなければアクセスできないようにすることで不正アクセスを防ぐ
         if (session()->pull(self::UPDATE_PASSWORD_SESSION_KEY) !== 'user_update_password') {
@@ -109,6 +109,6 @@ class PasswordController extends Controller
                 ->with('flash_message', '不正なリクエストです。');
         }
 
-        return view('indexes.login');
+        return view('mails.passwordComplete');
     }
 }

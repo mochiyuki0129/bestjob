@@ -8,8 +8,8 @@
                     <div class="login_title">
                         <h1>求人管理画面</h1>
                         <div class="admin_btn">
-                            <input type="button" value="求人登録"{{ route('register') }}>
-                            <input type="submit" value="応募者CSV出力"{{ route('adminCSV') }}>
+                            <input type="button" value="求人登録" onClick="location.href='{{ route('register') }}'">
+                            <input type="submit" value="応募者CSV出力" onClick="location.href='{{ route('adminCSV') }}'">
                         </div>
                     </div>
                     <div class="admin_container">

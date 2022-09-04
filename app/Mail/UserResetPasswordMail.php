@@ -42,7 +42,7 @@ class UserResetPasswordMail extends Mailable
         $now = Carbon::now();
 
         // 48時間後を期限とした署名付きURLを生成
-        $url = URL::temporarySignedRoute('password_reset.edit', $now->addHours(48), $tokenParam);
+        $url = URL::temporarySignedRoute('editPassword', $now->addHours(48), $tokenParam);
 
         return $this->from('test@test.co.jp', 'Best Job!!')
             ->to($this->user->email)

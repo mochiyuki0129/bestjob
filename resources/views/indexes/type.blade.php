@@ -25,13 +25,13 @@
                             <p>以下の２つの質問に答えて確認ボタンを押してください</p>
                             <p>１，考えるよりも先に行動する</p>
                             <div class="type_select">
-                                <input type="radio" name="type1" value="{{ $input->type1 ?? '1' }}">はい
-                                <input type="radio" name="type1" value="{{ $input->type1 ?? '0' }}">いいえ
+                                <input type="radio" name="type1" value="1">はい
+                                <input type="radio" name="type1" value="0">いいえ
                             </div>
                             <div class="type_select">
                                 <p>２，過程よりも結果を重視する</p>
-                                <input type="radio" name="type2" value="{{ $input->type2 ?? '1' }}">はい
-                                <input type="radio" name="type2" value="{{ $input->type2 ?? '0' }}">いいえ
+                                <input type="radio" name="type2" value="1">はい
+                                <input type="radio" name="type2" value="0">いいえ
                             </div>
                         </div>
                         <input type="submit" value="確認" class="signup_btn">

@@ -1,15 +1,15 @@
-@extends('maines.mainBase')
+@extends('indexes.indexBase')
 @section('reset')
 
     <body>
         <main>
-            <div class="login_wrapper">
-                <div class="login_inner">
-                    <div class="login_title">
-                        <h1>パスワードリセット</h1>
-                    </div>
-                    <form action="{{ route('resetSend') }}" method="post">
-                        @csrf
+            <form action="{{ route('resetSend') }}" method="post">
+                @csrf
+                <div class="login_wrapper">
+                    <div class="login_inner">
+                        <div class="login_title">
+                            <h1>パスワードリセット</h1>
+                        </div>
                         <div class="pass_reset">
                             <p>メールアドレス</p>
                             <input type="email" name="email">
@@ -17,11 +17,12 @@
                                 <div class="alert">{{ $message }}</div>
                             @enderror
                         </div>
-                        <div class="signup_btn">
-                            <input type="submit" value="送信">
+                        <div class="reset_btn">
+                            <input class="signup_btn" type="submit" value="送信">
                         </div>
-                    </form>
+                    </div>
                 </div>
+            </form>
         </main>
     </body>
 @endsection

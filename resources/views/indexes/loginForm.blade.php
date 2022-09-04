@@ -16,7 +16,7 @@
                                 {{ session('login_error') }}
                             </div>
                         @endif
-                        <div class="login_form">
+                        <div class="admin_login">
                             <p class="login_input">メールアドレス</p>
                             @error('email')
                                 <div class="alert">{{ $message }}</div>

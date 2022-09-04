@@ -39,7 +39,6 @@
                                 <p class="exception">{{ $input['tel'] }}</p>
                                 <div class="recruit_main">
                                     <p>{!! nl2br($input['title']) !!}</p>
-                                    {{-- <th><img src="{{ asset($input['image']) }}"></th> --}}
                                     <p>{!! nl2br($input['message']) !!}</p>
                                 </div>
                             </div>

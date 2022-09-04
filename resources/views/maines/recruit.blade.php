@@ -12,31 +12,28 @@
                         <div class="recruit_inner">
                             <div class="recruit_company">
                                 <div class="recruit_addres">
-                                    <p class="recruit_name"></p>
-                                    <th>{{ $input['name'] }}</th>
-                                    <span>*赤字の部分は実際には表示されません</span>
-                                    <p class="exception">{{ $input['email'] }}</p>
-                                    <p class="exception">{{ $input['tel'] }}</p>
+                                    <p>{{ $data->company }}</p>
+                                    <p>勤務地/{{ $data->area }}</p>
+                                    <p>募集タイプ/{{ $data->type }}</p>
                                 </div>
                                 <div class="recruit_categoly">
-                                    <p>業種/{{ $input['industry'] }}</p>
-                                    <p>職種/{{ $input['occupation'] }}</p>
+                                    <p>業種/{{ $data->industry }}</p>
+                                    <p>職種/{{ $data->occupation }}</p>
                                 </div>
                             </div>
-                            <p>勤務地/{{ $input['area'] }}</p>
-                            <p>募集タイプ/{{ $input['type'] }}</p>
                             <div class="recruit_main">
-                                <p>{{ $input['title'] }}</p>
-                                {{-- <th><img src="{{ $input['image'] }}"></th> --}}
-                                <p>{{ $input['message'] }}</p>
+                                <p>{!! nl2br($data->title) !!}</p>
+                                <p>{!! nl2br($data->message) !!}</p>
                             </div>
                         </div>
-                        <div class="signup_btn">
+                        <div class="twin_btn">
                             <input type="button" value="戻る" onClick="history.back()">
-                            <input type="submit" value="応募" onclick="location.href='{{ route('apply') }}">
+                            <input type="submit" value="応募" onclick="location.href='{{ route('apply', $data->id) }}'">
                         </div>
                     </div>
                 </div>
+            </div>
+            </div>
         </main>
     </body>
 @endsection

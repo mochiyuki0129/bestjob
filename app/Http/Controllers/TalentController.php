@@ -7,9 +7,10 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 use App\Http\Requests\LoginRequest;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Arr;
-use App\Models\user;
 use App\Http\Requests\ValidateRequest;
+use Illuminate\Support\Facades\Mail;
+use App\Mail\ApplyMail;
+use App\Models\Company;
 
 
 class TalentController extends Controller
@@ -18,6 +19,10 @@ class TalentController extends Controller
     public function index()
     {
         return view('indexes.index');
+    }
+    public function test()
+    {
+        return view('indexes.test');
     }
 
     // ログイン画面表示
@@ -68,55 +73,109 @@ class TalentController extends Controller
     public function confirm(Request $request)
     {
         $inputs = $request->all();
-        if (['type1' === "1" && 'type2' === "1"]) {
-            return redirect()->route('confirm');
+        $inputs = $request->input();
+
+        if ($request->input('type1') === '1' && $request->input('type2') === '1') {
+            $type = 'コントローラー';
         }
-        // dd($request);
-        return view('indexes.confirm', ['input' => $inputs]);
+        if ($request->input('type1') === '1' && $request->input('type2') === '0') {
+            $type = 'プロモーター';
+        }
+        if ($request->input('type1') === '0' && $request->input('type2') === '1') {
+            $type = 'サポーター';
+        }
+        if ($request->input('type1') === '0' && $request->input('type2') === '0') {
+            $type = 'アナライザー';
+        }
+        return view('indexes.confirm', [
+            'input' => $inputs,
+            'type' => $type
+        ]);
     }
 
     public function complete(Request $request)
     {
         $inputs = $request->all();
         DB::table('users')->insert([
-            'name' => $request['name'],
-            'kana' => $request['kana'],
-            'email' => $request['email'],
-            'password' => Hash::make($request['password']),
-            'tel' => $request['tel'],
-            'age' => $request['age'],
-            'gender' => $request['gender'],
-            'area' => $request['area'],
+            'name' => $request->name,
+            'kana' => $request->kana,
+            'email' => $request->email,
+            'password' => Hash::make($request->password),
+            'tel' => $request->tel,
+            'age' => $request->age,
+            'gender' => $request->gender,
+            'area' => $request->area,
+            'type' => $request->type,
         ]);
         if (!$inputs) {
             return redirect()->route('signup');
         }
-        return view('maines.main');
+        return view('indexes.login');
     }
 
     // 求人一覧画面表示
 
     public function main()
     {
-        if(Auth::user()->type === 'コントローラー') {
+        if (Auth::user()->type === 'コントローラー') {
             $datas = DB::table('companies')->whereType('コントローラー')->orderByDesc('created_at')->paginate(4);
+        }
+        if (Auth::user()->type === 'プロモーター') {
+            $datas = DB::table('companies')->whereType('プロモーター')->orderByDesc('created_at')->paginate(4);
+        }
+        if (Auth::user()->type === 'サポーター') {
+            $datas = DB::table('companies')->whereType('サポーター')->orderByDesc('created_at')->paginate(4);
+        }
+        if (Auth::user()->type === 'アナライザー') {
+            $datas = DB::table('companies')->whereType('アナライザー')->orderByDesc('created_at')->paginate(4);
         }
         return view('maines.main', ["datas" => $datas]);
     }
+
     public function mypage()
     {
         return view('maines.mypage');
     }
-    public function recruit()
+
+    public function recruit($id)
     {
-        return view('maines.recruit');
+        $data = Company::find($id);
+        return view('maines.recruit', ["data" => $data]);
     }
-    public function apply()
+
+    public function apply($id)
     {
-        return view('maines.apply');
+        $data = Company::find($id);
+        return view('maines.apply', ["data" => $data]);
     }
-    public function applyConfirm()
+
+    public function applyConfirm(Request $request, $id)
     {
-        return view('maines.applyConfirm');
+        $inputs = $request->all();
+        $data = Company::find($id);
+        return view('maines.applyConfirm', [
+            "data" => $data,
+            "inputs" => $inputs
+        ]);
+    }
+
+    public function applyComplete(Request $request, $id)
+    {
+        $input = $request->all();
+        $data = Company::find($id);
+
+        unset($input['_token']);
+        Mail::to('ny.0505@outlook.jp')->send(new ApplyMail('mails.applyMail', '応募がありました!', $input));
+        $apply = DB::table('company_user')->insert([
+            'user_id' => Auth::user()->id,
+            'company_id' => $data->id,
+            'self_promotion' => $request->self_promotion,
+            'reason' => $request->reason,
+            'created_at' => now()
+        ]);
+        if (!$apply) {
+            return redirect()->route('apply');
+        }
+        return redirect()->route('main')->with('succes_message' ,'応募が完了しました。');
     }
 }

@@ -8,5 +8,11 @@
 @yield('type')
 @yield('confirm')
 @yield('editPassword')
+@yield('reset')
+@yield('sendMail')
+@yield('passwordComplete')
+@yield('test')
+
+
 
 @include('layouts.footer')

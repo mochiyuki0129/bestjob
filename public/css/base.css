@@ -192,7 +192,7 @@ main {
 }
 
 .type_select {
-    margin:0.66rem;
+    margin: 0.66rem;
 }
 
 .form_group {
@@ -270,13 +270,20 @@ textarea {
 }
 
 .reset_submit {
-    margin-top:1rem;
+    margin-top: 1rem;
 }
 
 .admin_btn input:hover {
     cursor: pointer;
 }
 
+.reset_btn {
+    margin-top:3rem;
+}
+
+.admin_login {
+    padding:3rem;
+}
 /* main */
 
 .header_container {
@@ -304,12 +311,27 @@ textarea {
 }
 
 .pass_reset {
-    padding: 2rem;
+    padding: 4.7rem;
 }
 
 .pass_reset p {
     font-size: 1.5rem;
     padding: 1.2rem;
+}
+
+.reset_table {
+    margin:0 auto;
+    height:5.3rem;
+}
+
+.reset_table th {
+    margin-top: 1.3rem;
+
+}
+
+.input_group {
+    height:100%;
+    padding: 2rem;
 }
 
 .twin_btn {
@@ -389,12 +411,69 @@ span,
     font-size: 1rem;
 }
 
+.auth_user {
+    margin-right: 40rem;
+    font-size: 1.2rem;
+}
+
+.self_promotion,
+.reason {
+    font-size: 1.5rem;
+    padding: 2rem;
+}
+
+.self_promotion p,
+.reason p {
+    margin-top: 1rem;
+}
+
+.apply_message {
+    padding:1rem;
+    text-align: left;
+    width: 90%;
+    margin: 0 auto;
+    border: 1px solid black;
+    word-break: break-word
+}
+
+.send_form {
+    padding:7.57rem;
+}
+.send_form p{
+    font-size: 2rem;
+}
+.send_form a{
+    font-size: 1.5rem;
+    display: inline-block;
+    margin-top:2rem;
+}
+
+.send_inner {
+    font-size: 1.3rem;
+    padding:7.37rem;
+}
+
+.send_inner a {
+    display: inline-block;
+    margin-top:2rem;
+}
+
+.login_user {
+    font-weight: bold;
+    color:orange;
+}
+
+.succes_message {
+    color:white;
+    background-color: #50E3C2;
+}
+
 /* admin */
 
 .admin_container {
-padding:2rem 0;
-width:90%;
-margin:0 auto;
+    padding: 2rem 0;
+    width: 90%;
+    margin: 0 auto;
 
 
 }
@@ -411,24 +490,24 @@ margin:0 auto;
 }
 
 .admin_btn {
-    margin-left:40rem;
+    margin-left: 40rem;
 }
 
 .admin_btn input {
-    width:8rem;
-    height:3rem;
+    width: 8rem;
+    height: 3rem;
 }
 
 .admin_group {
-    width:100%;
-    padding-top:2rem;
-    border:1px solid black;
-    margin:1rem 0;
+    width: 100%;
+    padding-top: 2rem;
+    border: 1px solid black;
+    margin: 1rem 0;
 
 }
 
 .admin_group p {
-    margin-top:1rem;
+    margin-top: 1rem;
 }
 
 .pagination {
@@ -437,7 +516,7 @@ margin:0 auto;
 }
 
 .delete {
-    margin-top:1rem;
+    margin-top: 1rem;
     background-color: red;
 }
 

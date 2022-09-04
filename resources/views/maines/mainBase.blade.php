@@ -6,7 +6,7 @@
 @yield('recruit')
 @yield('apply')
 @yield('applyConfirm')
+@yield('applyComplete')
 @yield('mypage')
-@yield('reset')
 
 @include('layouts.footer')

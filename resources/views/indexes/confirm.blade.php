@@ -13,7 +13,7 @@
                 <input type="hidden" name="age" value="{{ $input['age'] }}">
                 <input type="hidden" name="gender" value="{{ $input['gender'] }}">
                 <input type="hidden" name="area" value="{{ $input['area'] }}">
-                <input type="hidden" name="type" value="{{ $input->type }}">
+                <input type="hidden" name="type" value="{{ $type }}">
 
                 <div class="login_wrapper">
                     <div class="login_inner">
@@ -52,13 +52,13 @@
                                 </tr>
                                 <tr class="confirm_group">
                                     <th>タイプ</th>
-                                    <th>{{ $input['type'] }}</th>
+                                    <th>{{ $type }}</th>
                                 </tr>
                             </table>
                         </div>
                         <div class="twin_btn">
                             <input type="button" value="修正" onclick="confirm('登録フォームに戻りますか？')"
-                                location.href="{{ route('signup') }}">
+                                location.href="{{ url('signup') }}">
                             <input type="submit" value="登録" onclick="confirm('登録しますか?')">
                         </div>
                     </div>

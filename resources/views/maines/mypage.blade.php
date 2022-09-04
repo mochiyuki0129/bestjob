@@ -3,31 +3,50 @@
     <div class="login_wrapper">
         <div class="login_inner">
             <div class="login_title">
-                <h1>マイページ</h1>
+                <h1>登録確認</h1>
             </div>
-            <div class="signup_table">
-            <dl>
-                <dt>名前</dt>
-                <dd>{{ $value['name'] }}</dd>
-                <dt>フリガナ</dt>
-                <dd>{{ $value['kana'] }}</dd>
-                <dt>メールアドレス（会員ID）</dt>
-                <dd>{{ $value['email'] }}</dd>
-                <dt>電話番号</dt>
-                <dd>{{ $value['tel'] }}</dd>
-                <dt>年齢</dt>
-                <dd>{{ $value['age'] }}</dd>
-                <dt>性別</dt>
-                <dd>{{ $value['gender'] }}</dd>
-                <dt>勤務希望地</dt>
-                <dd>{{ $value['area'] }}</dd>
-                <dt>タイプ</dt>
-                <dd>{{ $value['type'] }}</dd>
+            <div class="confirm_table">
+                <table>
+                    <tr class="confirm_group">
+                        <th>名前</th>
+                        <th>{{ Auth::user()->name }}</th>
+                    </tr>
+                    <tr class="confirm_group">
+                        <th>フリガナ</th>
+                        <th>{{ Auth::user()->kana }}</th>
+                    </tr>
+                    <tr class="confirm_group">
+                        <th>メールアドレス（会員ID）</th>
+                        <th>{{ Auth::user()->email }}</th>
+                    </tr>
+                    <tr class="confirm_group">
+                        <th>電話番号</th>
+                        <th>{{ Auth::user()->tel }}</th>
+                    </tr>
+                    <tr class="confirm_group">
+                        <th>年齢</th>
+                        <th>{{ Auth::user()->age }}</th>
+                    </tr>
+                    <tr class="confirm_group">
+                        <th>性別</th>
+                        <th>{{ Auth::user()->gender }}</th>
+                    </tr>
+                    <tr class="confirm_group">
+                        <th>勤務希望地</th>
+                        <th>{{ Auth::user()->area }}</th>
+                    </tr>
+                    <tr class="confirm_group">
+                        <th>タイプ</th>
+                        <th>{{ Auth::user()->type }}</th>
+                    </tr>
+                </table>
             </div>
-            <div class="signup_btn">
-            <input type="button" value="トップページ" onclick="location.href='{{ route('main') }}'">
-            <input type="button" value="パスワードリセット" onclick="location.href='{{ route('reset') }}'">
+            <div class="twin_btn">
+                <input type="button" value="戻る" onclick="history.back()">
             </div>
         </div>
     </div>
+    </form>
+    </main>
+    </body>
 @endsection
