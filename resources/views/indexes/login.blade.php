@@ -10,6 +10,11 @@
                     <div class="login_inner">
                         <div class="login_title">
                             <h1>ログインフォーム</h1>
+                            @if (session('succes_message'))
+                                <div class="succes_message">
+                                    {{ session('succes_message') }}
+                                </div>
+                            @endif
                         </div>
                         @if (session('login_error'))
                             <div class="alert">
@@ -33,7 +38,7 @@
                             <a link href="{{ url('signup') }}">新規登録はこちらから</a>
                         </div>
                         <div class="reset_submit">
-                            <a link href="{{ route('reset') }}" >パスワードを忘れた方はこちらから</a>
+                            <a link href="{{ route('reset') }}">パスワードを忘れた方はこちらから</a>
                         </div>
                     </div>
                 </div>

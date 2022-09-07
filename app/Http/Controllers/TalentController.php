@@ -110,7 +110,7 @@ class TalentController extends Controller
         if (!$inputs) {
             return redirect()->route('signup');
         }
-        return view('indexes.login');
+        return redirect()->route('login')->with('succes_message' ,'登録が完了しました。');
     }
 
     // 求人一覧画面表示

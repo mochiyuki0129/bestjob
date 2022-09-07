@@ -65,7 +65,7 @@
                         </div>
                         <div class="twin_btn">
                             <input type="button" value="戻る" onClick="history.back()">
-                            <input type="submit" value="登録" onclick="confirm('登録しますか?')">
+                            <input type="submit" value="応募" onclick="confirm('こちらで応募しますか?')">
                         </div>
                     </div>
                 </div>
